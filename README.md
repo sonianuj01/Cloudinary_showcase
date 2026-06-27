@@ -1,118 +1,81 @@
-<div align="center">
+# 🎥 Cloudinary Showcase
 
-# 🚀 MediaHub
-### AI-Powered Video Upload, Compression & Social Sharing Platform
+A modern full-stack media management platform built with **Next.js** that allows users to securely upload, compress, manage, and share videos and images. The application integrates **Cloudinary** for cloud storage and media optimization, **Clerk** for authentication, **Prisma ORM** for database management, and **PostgreSQL** as the backend database.
 
-<p align="center">
-Modern SaaS application built with Next.js 16, Clerk, Cloudinary and Prisma.
-</p>
-
-<p align="center">
-
-![Next.js](https://img.shields.io/badge/Next.js-16-black?style=for-the-badge&logo=next.js)
-![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react)
-![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript)
-![TailwindCSS](https://img.shields.io/badge/TailwindCSS-4-38BDF8?style=for-the-badge&logo=tailwindcss)
-![Prisma](https://img.shields.io/badge/Prisma-7-2D3748?style=for-the-badge&logo=prisma)
-![Cloudinary](https://img.shields.io/badge/Cloudinary-3448C5?style=for-the-badge&logo=cloudinary)
-![Clerk](https://img.shields.io/badge/Clerk-Authentication-6C47FF?style=for-the-badge)
-
-</p>
+🌐 **Live Demo:** https://cloudinary-showcase-mu.vercel.app/
 
 ---
 
-### 🌐 Live Demo
+## 📌 Overview
 
-🔗 https://your-live-url.vercel.app
+Cloudinary Showcase is designed to demonstrate how modern web applications handle media management at scale. Users can authenticate securely, upload videos or images, store metadata in PostgreSQL, and generate shareable links for uploaded content.
 
----
-
-## ✨ Preview
-
-<p align="center">
-
-<img src="./public/screenshots/home.png" width="80%">
-
-</p>
+The project follows the latest **Next.js App Router** architecture, where both the frontend and backend are built within the same Next.js application.
 
 ---
 
-</div>
+## ✨ Features
 
-# 📖 Overview
+### Authentication
 
-MediaHub is a modern full-stack SaaS platform that allows users to upload videos, automatically optimize them using Cloudinary, and instantly generate shareable links.
+* Secure Sign In & Sign Up using Clerk
+* Google OAuth authentication
+* Route protection using middleware
+* Session management
+* Protected API routes
 
-The application demonstrates authentication, media management, cloud storage, database integration, and modern UI development using the latest Next.js App Router.
+### Video Management
 
----
+* Upload videos to Cloudinary
+* Automatic media optimization
+* Display uploaded videos
+* Store metadata in PostgreSQL
+* Video duration tracking
+* File size comparison
 
-# ✨ Features
+### Image Management
 
-## 🔐 Authentication
+* Upload images
+* Cloudinary storage
+* Public image URLs
+* Instant preview
 
-- Clerk Authentication
-- Google OAuth Login
-- Secure Sign In / Sign Up
-- Protected Routes
-- Middleware Authentication
-- Session Management
+### Social Sharing
 
----
+* Generate shareable links
+* Download uploaded media
+* Copy share URLs
+* Public media access
 
-## 🎥 Video Upload
+### Modern UI
 
-- Upload Videos
-- Upload Progress
-- Cloudinary Video Storage
-- Automatic Compression
-- Original & Compressed Size
-- Duration Tracking
-
----
-
-## 🖼 Image Upload
-
-- Cloudinary Image Upload
-- Instant Preview
-- Secure Upload API
-
----
-
-## 🌍 Social Sharing
-
-- Generate Shareable Links
-- Download Uploaded Media
-- Responsive Preview
+* Responsive design
+* Tailwind CSS
+* DaisyUI components
+* Loading states
+* Toast notifications
+* Mobile-friendly layout
 
 ---
 
-## 📊 Dashboard
+# 🏗️ Tech Stack
 
-- Uploaded Videos
-- Upload History
-- Video Metadata
-- Responsive Cards
+## Frontend
 
----
+* Next.js 16 (App Router)
+* React 19
+* TypeScript
+* Tailwind CSS 4
+* DaisyUI
+* Axios
 
-## ⚡ Performance
+## Backend
 
-- Next.js App Router
-- React Server Components
-- Optimized API Routes
-- Cloudinary CDN
-- Automatic Media Optimization
-
----
-
-# 🛠 Tech Stack
-
-| Frontend | Backend | Database | Cloud |
-|-----------|----------|-----------|--------|
-| Next.js 16 | Route Handlers | PostgreSQL | Cloudinary |
-| React 19 | Prisma ORM | Prisma | Clerk |
-| Tailwind CSS 4 | TypeScript | | |
+* Next.js Route Handlers
+* Prisma ORM
+* PostgreSQL
+* Cloudinary SDK
+* Clerk Authentication
 
 ---
 
@@ -128,18 +91,16 @@ app/
 │
 ├── (auth)/
 │   ├── sign-in/
-│   ├── sign-up/
+│   └── sign-up/
 │
 ├── api/
 │   ├── image-upload/
 │   ├── video-upload/
-│   ├── videos/
+│   └── videos/
 │
 components/
 │
-├── Navbar
-├── Sidebar
-├── VideoCard
+├── VideoCard.tsx
 │
 lib/
 │
@@ -154,35 +115,49 @@ public/
 
 ---
 
-# 🚀 Getting Started
+# ⚙️ Installation
 
-## Clone Repository
-
-```bash
-git clone https://github.com/yourusername/your-repo-name.git
-```
+Clone the repository
 
 ```bash
-cd your-repo-name
+git clone https://github.com/sonianuj01/Cloudinary_showcase.git
 ```
 
----
+Move into the project
 
-## Install Dependencies
+```bash
+cd Cloudinary_showcase
+```
+
+Install dependencies
 
 ```bash
 npm install
 ```
 
+Generate Prisma Client
+
+```bash
+npx prisma generate
+```
+
+Push the schema to your database
+
+```bash
+npx prisma db push
+```
+
+Start the development server
+
+```bash
+npm run dev
+```
+
 ---
 
-## Configure Environment Variables
+# 🔑 Environment Variables
 
-Create
-
-```text
-.env
-```
+Create a `.env.local` file and add the following variables:
 
 ```env
 DATABASE_URL=
@@ -197,111 +172,57 @@ CLOUDINARY_API_SECRET=
 
 ---
 
-## Generate Prisma Client
+# 🗄️ Database Schema
 
-```bash
-npx prisma generate
-```
+## Video
 
----
-
-## Push Database
-
-```bash
-npx prisma db push
-```
-
----
-
-## Run Development Server
-
-```bash
-npm run dev
-```
-
-Open
-
-```
-http://localhost:3000
-```
+| Field          | Type     |
+| -------------- | -------- |
+| id             | String   |
+| title          | String   |
+| description    | String?  |
+| publicId       | String   |
+| originalSize   | String   |
+| compressedSize | String   |
+| duration       | Float    |
+| createdAt      | DateTime |
+| updatedAt      | DateTime |
 
 ---
 
-# 🔐 Authentication Flow
+# 🔄 Application Flow
 
-```
+```text
 User
    │
    ▼
-Clerk Authentication
+Authentication (Clerk)
    │
    ▼
-Middleware
+Upload Media
    │
    ▼
-Protected Routes
+Cloudinary Storage
    │
    ▼
-Upload Video
+Store Metadata (Prisma + PostgreSQL)
    │
    ▼
-Cloudinary
+Display Media
    │
    ▼
-Prisma
-   │
-   ▼
-PostgreSQL
+Share & Download
 ```
 
 ---
 
-# 📸 Screenshots
+# 🚀 Deployment
 
-## Home
+The project is deployed on **Vercel**.
 
-```
-Add Screenshot
-```
+**Live URL**
 
----
-
-## Upload
-
-```
-Add Screenshot
-```
-
----
-
-## Dashboard
-
-```
-Add Screenshot
-```
-
----
-
-## Social Share
-
-```
-Add Screenshot
-```
-
----
-
-# 🔮 Future Improvements
-
-- AI Video Summarization
-- AI Caption Generation
-- Video Analytics
-- Like & Comment System
-- User Profiles
-- Team Collaboration
-- Video Streaming
-- Email Notifications
-- Admin Dashboard
-- Payment Integration
+https://cloudinary-showcase-mu.vercel.app/
 
 ---
 
@@ -310,32 +231,25 @@ Add Screenshot
 Contributions are welcome.
 
 1. Fork the repository
-
-2. Create your feature branch
+2. Create a new feature branch
 
 ```bash
-git checkout -b feature/NewFeature
+git checkout -b feature/new-feature
 ```
 
-3. Commit
+3. Commit your changes
 
 ```bash
-git commit -m "Added New Feature"
+git commit -m "Add new feature"
 ```
 
-4. Push
+4. Push the branch
 
 ```bash
-git push origin feature/NewFeature
+git push origin feature/new-feature
 ```
 
 5. Open a Pull Request
-
----
-
-# ⭐ Support
-
-If you like this project, consider giving it a ⭐ on GitHub.
 
 ---
 
@@ -343,24 +257,5 @@ If you like this project, consider giving it a ⭐ on GitHub.
 
 **Anuj Verma**
 
-GitHub:
-https://github.com/sonianuj01
+* GitHub: https://github.com/sonianuj01
 
-LinkedIn:
-(Add Your LinkedIn)
-
----
-
-# 📄 License
-
-Distributed under the MIT License.
-
----
-
-<div align="center">
-
-Made with ❤️ using
-
-Next.js • React • Prisma • PostgreSQL • Clerk • Cloudinary
-
-</div>
